@@ -22,13 +22,14 @@ const AUTH = {
     API_KEY : process.env.API_KEY || "1db98eda0fbacab7b868bc384634508e"
 }
 
+const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://admin:FaIoWFUdu8SlYdO4@my-db.6knb1.mongodb.net/indego?retryWrites=true&w=majority"
 const MONGO_USERNAME = process.env.MONGO_USERNAME || 'localhost';
 const DB_NAME = process.env.DB_NAME || `indego-db`;
 
 const MONGO = {
     username: MONGO_USERNAME,
     options: MONGO_OPTIONS,
-    url: `mongodb://${MONGO_USERNAME}/${DB_NAME}`
+    url: MONGODB_URL
 };
 
 const SERVER_HOSTNAME = process.env.SERVER_HOSTNAME || 'localhost';
