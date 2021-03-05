@@ -11,15 +11,15 @@ const MONGO_OPTIONS = {
     autoIndex: false,
     retryWrites: false
 };
-
+    const SECRET_KEY = process.env.SECRET_KEY;
 const AUTH = {
-    ENCRYPTION_KEY : "@zxcasdqwe@s123",
-    ENCRYPTION_ALGORITHM : "aes-256-ctr",
-    SECRET_KEY : "@qweasd@zxc321$",
-    STATIC_JWT : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWJiOWVhZjU3YmRiNjAwMTA5NjEzNjYiLCJpYXQiOjE2MTQ4ODA0MTl9.D3EVqPxWoL3BN6sAqRmMGhbJj1oPDzpYHESUqpSeBHo",
-    UNAUTHORIZE_JWT : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWJiOWVhZjU3YmRiNjAwMTA5NjEzNjciLCJpYXQiOjE2MTQ4ODA3NDd9.xAHCJT-G5dmY4BObm-6kHdcxZq3xUjjMnkrW_iT0yFE",
-    ID : "5ebb9eaf57bdb60010961366",
-    API_KEY : "1db98eda0fbacab7b868bc384634508e"
+    ENCRYPTION_KEY : process.env.ENCRYPTION_KEY || "@zxcasdqwe@s123",
+    ENCRYPTION_ALGORITHM : process.env.ENCRYPTION_ALGORITHM || "aes-256-ctr",
+    SECRET_KEY : process.env.SECRET_KEY || "@qweasd@zxc321$",
+    STATIC_JWT : process.env.STATIC_JWT || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWJiOWVhZjU3YmRiNjAwMTA5NjEzNjYiLCJpYXQiOjE2MTQ4ODA0MTl9.D3EVqPxWoL3BN6sAqRmMGhbJj1oPDzpYHESUqpSeBHo",
+    UNAUTHORIZE_JWT : process.env.UNAUTHORIZE_JWT || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWJiOWVhZjU3YmRiNjAwMTA5NjEzNjciLCJpYXQiOjE2MTQ4ODA3NDd9.xAHCJT-G5dmY4BObm-6kHdcxZq3xUjjMnkrW_iT0yFE",
+    ID : process.env.ID || "5ebb9eaf57bdb60010961366",
+    API_KEY : process.env.API_KEY || "1db98eda0fbacab7b868bc384634508e"
 }
 
 const MONGO_USERNAME = process.env.MONGO_USERNAME || 'localhost';
@@ -45,7 +45,7 @@ const SERVER = {
 const config = {
     mongo: MONGO,
     server: SERVER,
-    auth: AUTH
+    auth: AUTH,
 };
 
 export default config;

@@ -1,3 +1,4 @@
+import http from 'http';
 import bodyParser from 'body-parser';
 import express from 'express';
 import logging from './config/logging';
@@ -5,6 +6,8 @@ import config from './config/config';
 import stationRoutes from './routes/station';
 import scheduler from './services/scheduler';
 import mongoose from 'mongoose';
+import swaggerUi from 'swagger-ui-express';
+import * as swaggerDocument from '../swagger.json';
 
 scheduler();
 
@@ -29,14 +32,16 @@ router.use((req, res, next) => {
     res.on('finish', () => {
         /** Log the res */
         logging.info(NAMESPACE, `METHOD: [${req.method}] - URL: [${req.url}] - STATUS: [${res.statusCode}] - IP: [${req.socket.remoteAddress}]`);
-    })
-    
+    });
+
     next();
 });
 
 /** Parse the body of the request */
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
+
+router.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 /** Rules of our API */
 router.use((req, res, next) => {
@@ -62,5 +67,6 @@ router.use((req, res, next) => {
         message: error.message
     });
 });
+
 
 router.listen(config.server.port, () => logging.info(NAMESPACE, `Server is running ${config.server.hostname}:${config.server.port}`));
