@@ -1,1 +1,1 @@
-web: ts-node source/server.ts
+web: nodemon start
