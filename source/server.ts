@@ -6,7 +6,7 @@ import stationRoutes from './routes/station';
 import scheduler from './services/scheduler';
 import mongoose from 'mongoose';
 import swaggerUi from 'swagger-ui-express';
-import * as swaggerDocument from '../swagger.json';
+import * as swaggerDocument from './swagger.json';
 
 scheduler();
 
