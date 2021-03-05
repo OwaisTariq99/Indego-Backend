@@ -2,11 +2,8 @@
  * station controllers
  */
 
-import { NextFunction, Request, Response } from 'express';
 import mongoose from 'mongoose';
 import Station from '../models/station';
-import fetch from 'node-fetch';
-import config from '../config/config';
 
 /**
  * createStation - insert station in database.
