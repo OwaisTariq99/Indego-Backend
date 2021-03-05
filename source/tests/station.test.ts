@@ -1,10 +1,17 @@
 import { request, response } from 'express';
 import controller from '../controllers/station';
-import { NextFunction, Request, Response } from 'express';
+import verifyToken from '../services/verifyToken';
+// import { NextFunction, Request, Response } from 'express';
 
 describe("test add function", () => {
   test('it should fetch the data and save it in database', () => {
     console.log("here")
+  });
+});
+
+describe("test add function", () => {
+  test('it should verify token', () => {
+    verifyToken
   });
 });
 

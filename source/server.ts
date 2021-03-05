@@ -3,7 +3,6 @@ import bodyParser from 'body-parser';
 import express from 'express';
 import logging from './config/logging';
 import config from './config/config';
-import bookRoutes from './routes/book';
 import stationRoutes from './routes/station';
 import scheduler from './services/scheduler';
 import mongoose from 'mongoose';
@@ -54,7 +53,6 @@ router.use((req, res, next) => {
 });
 
 /** Routes go here */
-router.use('/api/books', bookRoutes);
 router.use('/api/v1/', stationRoutes);
 
 /** Error handling */
