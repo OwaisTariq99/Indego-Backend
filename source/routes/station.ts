@@ -26,6 +26,13 @@ router.post('/indego-data-fetch-and-store-it-db', verifyToken, async (req, res) 
                 error: null,
                 });
             }
+            else{
+                return res.status(400).json({
+                status: 400,
+                data: null,
+                error: "bad request",
+                });
+            }
         });
     }
     catch(err){
@@ -63,6 +70,13 @@ router.get('/stations/:at', verifyToken, async (req, res) => {
                 error: null,
                 });
             }
+            else{
+                return res.status(404).json({
+                status: 404,
+                data: null,
+                error: "Data not found",
+                });
+            }
         });
     }
     catch(err){
@@ -98,6 +112,13 @@ router.get('/stations/:at/:kioskId', verifyToken, async (req, res) => {
                 status: 200,
                 data: obj,
                 error: null,
+                });
+            }
+            else{
+                return res.status(404).json({
+                status: 404,
+                data: null,
+                error: "Data not found",
                 });
             }
         });
