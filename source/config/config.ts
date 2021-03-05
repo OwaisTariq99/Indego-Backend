@@ -23,12 +23,9 @@ const AUTH = {
 }
 
 const MONGO_USERNAME = process.env.MONGO_USERNAME || 'localhost';
-// const MONGO_PASSWORD = process.env.MONGO_USERNAME || 'supersecretpassword1';
-// const MONGO_HOST = process.env.MONGO_URL || `ds343895.mlab.com:43895/mongobongo`;
 const DB_NAME = process.env.DB_NAME || `indego-db`;
 
 const MONGO = {
-    // host: MONGO_HOST,
     username: MONGO_USERNAME,
     options: MONGO_OPTIONS,
     url: `mongodb://${MONGO_USERNAME}/${DB_NAME}`
