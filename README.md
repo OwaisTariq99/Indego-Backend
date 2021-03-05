@@ -6,7 +6,8 @@ obtain the weather for a geographical location central to Philadelphia. This API
 # About Project
 Using Typescript, Node.js, and Express created a new API server which accumulates data over time and provides access to historical data for both weather and Indego bike availability.
 # Requirement
-Nodejs >= 6.x.x (Recommended v12.16.1) MongoDB >= 3.x.x
+Nodejs >= 12.x.x
+MongoDB >= 4.x.x
 # Installation
 npm install
 # Run
