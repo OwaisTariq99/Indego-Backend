@@ -13,15 +13,15 @@
     ],
     "tags": [
         {
-            "name": "createStation",
+            "name": "indego-data-fetch-and-store-it-db",
             "description": "Store data from Indego"
         },
         {
-            "name": "getWeatherAndStationData",
+            "name": "stations?at=2019-09-01T10:00:00",
             "description": "Snapshot of all stations at a specified time"
         },
         {
-            "name": "getWeatherAndStationDataByKioskId",
+            "name": "stations/KIOSKID_GOES_HERE?at=2019-09-01T10:00:00",
             "description": "Snapshot of one station at a specific time"
         }
     ],
