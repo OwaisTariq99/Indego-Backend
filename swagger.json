@@ -28,10 +28,10 @@
 
 
     "paths": {
-        "/createStation": {
+        "/indego-data-fetch-and-store-it-db": {
             "post": {
                 "tags": [
-                    "createStation"
+                    "/indego-data-fetch-and-store-it-db"
                 ],
                 "summary": "downloads fresh data from Indego GeoJSON station status API and stores it inside MongoDB.",
                 "requestBody": {
@@ -58,10 +58,10 @@
             }
         },
 
-        "/getWeatherAndStationData": {
+        "stations?at=2019-09-01T10:00:00": {
             "get": {
                 "tags": [
-                    "getWeatherAndStationData"
+                    "stations?at=2019-09-01T10:00:00"
                 ],
                 "summary": "Open Weather Map for all stations at specified time",
                 "requestBody": {
@@ -88,10 +88,10 @@
             }
         },
 
-        "/getWeatherAndStationDataByKioskId": {
+        "/stations/KIOSKID_GOES_HERE?at=2019-09-01T10:00:00": {
             "get": {
                 "tags": [
-                    "getWeatherAndStationDataByKioskId"
+                    "/stations/KIOSKID_GOES_HERE?at=2019-09-01T10:00:00"
                 ],
                 "summary": "Open Weather Map for all stations at specified time",
                 "requestBody": {
