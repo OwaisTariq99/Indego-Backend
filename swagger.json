@@ -28,7 +28,7 @@
 
 
     "paths": {
-        "/indego-data-fetch-and-store-it-db": {
+        "https://test-indego.herokuapp.com/api/v1/indego-data-fetch-and-store-it-db": {
             "post": {
                 "tags": [
                     "indego-data-fetch-and-store-it-db"
@@ -58,7 +58,7 @@
             }
         },
 
-        "stations?at=2019-09-01T10:00:00": {
+        "https://test-indego.herokuapp.com/api/v1/stations?at=2019-09-01T10:00:00": {
             "get": {
                 "tags": [
                     "stations?at=2019-09-01T10:00:00"
@@ -88,7 +88,7 @@
             }
         },
 
-        "/stations/KIOSKID_GOES_HERE?at=2019-09-01T10:00:00": {
+        "https://test-indego.herokuapp.com/api/v1/stations/KIOSKID_GOES_HERE?at=2019-09-01T10:00:00": {
             "get": {
                 "tags": [
                     "stations/KIOSKID_GOES_HERE?at=2019-09-01T10:00:00"
