@@ -2,14 +2,22 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+// const MONGO_OPTIONS = {
+//     useUnifiedTopology: true,
+//     useNewUrlParser: true,
+//     socketTimeoutMS: 30000,
+//     keepAlive: true,
+//     poolSize: 50,
+//     autoIndex: false,
+//     retryWrites: false
+// };
 const MONGO_OPTIONS = {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-    socketTimeoutMS: 30000,
-    keepAlive: true,
-    poolSize: 50,
-    autoIndex: false,
-    retryWrites: false
+ useUnifiedTopology: true,
+ useNewUrlParser: true,
+ socketTimeoutMS: 30000,
+ keepAlive: true,
+ poolSize: 50,
+ autoIndex: false
 };
     const SECRET_KEY = process.env.SECRET_KEY;
 const AUTH = {
@@ -22,18 +30,21 @@ const AUTH = {
     API_KEY : process.env.API_KEY || "1db98eda0fbacab7b868bc384634508e"
 }
 
-const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://admin:FaIoWFUdu8SlYdO4@my-db.6knb1.mongodb.net/indego?retryWrites=true&w=majority"
 const MONGO_USERNAME = process.env.MONGO_USERNAME || 'localhost';
+const MONGO_PASSWORD = process.env.MONGO_USERNAME || 'supersecretpassword1';
+const MONGO_HOST = process.env.MONGO_URL || `ds343895.mlab.com:43895/mongobongo`;
 const DB_NAME = process.env.DB_NAME || `indego-db`;
 
 const MONGO = {
+    // host: MONGO_HOST,
     username: MONGO_USERNAME,
     options: MONGO_OPTIONS,
-    url: MONGODB_URL
+    url: `mongodb://${MONGO_USERNAME}/${DB_NAME}`
 };
 
-const SERVER_HOSTNAME = process.env.SERVER_HOSTNAME || 'localhost';
-const SERVER_PORT = process.env.SERVER_PORT || 4000;
+const SERVER_HOSTNAME = process.env.SERVER_HOSTNAME || 'https://test-indego.herokuapp.com';
+// const SERVER_HOSTNAME = process.env.SERVER_HOSTNAME || 'localhost';
+const SERVER_PORT = process.env.PORT || 4000;
 
 const SERVER = {
     hostname: SERVER_HOSTNAME,
@@ -44,6 +55,7 @@ const config = {
     mongo: MONGO,
     server: SERVER,
     auth: AUTH,
+    dbtesturl:process.env.MONGO_ATLAS
 };
 
 export default config;
