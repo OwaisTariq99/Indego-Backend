@@ -32,8 +32,8 @@ const MONGO = {
     url: MONGODB_URL
 };
 
-const SERVER_HOSTNAME = process.env.SERVER_HOSTNAME || 'localhost';
-const SERVER_PORT = process.env.SERVER_PORT || 4000;
+const SERVER_HOSTNAME = process.env.SERVER_HOSTNAME || 'https://test-indego.herokuapp.com/';
+const SERVER_PORT = process.env.PORT || 4000;
 
 const SERVER = {
     hostname: SERVER_HOSTNAME,
