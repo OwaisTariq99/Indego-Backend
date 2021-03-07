@@ -17,9 +17,8 @@ scheduler();
 
 const NAMESPACE = 'Server';
 const router = express();
-// const MONGO_ATLAS: string = config.mongo.url;
-// const MONGO_ATLAS:string = `${process.env.MONGO_ATLAS}`;
 const MONGO_ATLAS:string = `mongodb+srv://admin:FaIoWFUdu8SlYdO4@my-db.6knb1.mongodb.net/my-db?retryWrites=true&w=majority`;
+
 /** Connect to Mongo */
 mongoose
     .connect(MONGO_ATLAS, config.mongo.options)

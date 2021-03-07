@@ -38,8 +38,6 @@ var cors_1 = __importDefault(require("cors"));
 scheduler_1.default();
 var NAMESPACE = 'Server';
 var router = express_1.default();
-// const MONGO_ATLAS: string = config.mongo.url;
-// const MONGO_ATLAS:string = `${process.env.MONGO_ATLAS}`;
 var MONGO_ATLAS = "mongodb+srv://admin:FaIoWFUdu8SlYdO4@my-db.6knb1.mongodb.net/indego?retryWrites=true&w=majority";
 /** Connect to Mongo */
 mongoose_1.default
