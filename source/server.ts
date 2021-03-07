@@ -8,20 +8,18 @@ import mongoose from 'mongoose';
 import swaggerUi from 'swagger-ui-express';
 import * as swaggerDocument from '../swagger.json';
 import cors from 'cors';
-// let cors = require('cors');
-// import dotenv from 'dotenv';
+import dotenv from 'dotenv';
 
-// dotenv.config();
+dotenv.config();
 
 scheduler();
 
 const NAMESPACE = 'Server';
 const router = express();
-const MONGO_ATLAS:string = `mongodb+srv://admin:FaIoWFUdu8SlYdO4@my-db.6knb1.mongodb.net/my-db?retryWrites=true&w=majority`;
 
 /** Connect to Mongo */
 mongoose
-    .connect(MONGO_ATLAS, config.mongo.options)
+    .connect(config.mongo.url, config.mongo.options)
     .then((result) => {
         logging.info(NAMESPACE, 'Mongo Connected');
     })
@@ -30,8 +28,6 @@ mongoose
     });
 
 /** Parse the body of the request */
-// router.use(bodyParser.urlencoded({ extended: true }));
-// router.use(bodyParser.json());
 router.use(bodyParser.json({ limit: '900mb' }));
 router.use(bodyParser.urlencoded({ extended: true }));
 

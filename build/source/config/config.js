@@ -24,15 +24,13 @@ var AUTH = {
     API_KEY: process.env.API_KEY || "1db98eda0fbacab7b868bc384634508e"
 };
 var MONGO_USERNAME = process.env.MONGO_USERNAME || 'localhost';
-var DB_NAME = process.env.DB_NAME || "indego-db";
+var MONGO_URL = "mongodb+srv://admin:FaIoWFUdu8SlYdO4@my-db.6knb1.mongodb.net/my-db?retryWrites=true&w=majority";
 var MONGO = {
-    // host: MONGO_HOST,
     username: MONGO_USERNAME,
     options: MONGO_OPTIONS,
-    url: "mongodb://" + MONGO_USERNAME + "/" + DB_NAME
+    url: MONGO_URL
 };
 var SERVER_HOSTNAME = process.env.SERVER_HOSTNAME || 'https://test-indego.herokuapp.com';
-// const SERVER_HOSTNAME = process.env.SERVER_HOSTNAME || 'localhost';
 var SERVER_PORT = process.env.PORT || 4000;
 var SERVER = {
     hostname: SERVER_HOSTNAME,
