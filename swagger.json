@@ -7,7 +7,7 @@
     },
     "servers": [
         {
-            "url": "https://hassaan-indego-test.herokuapp.com/api/v1",
+            "url": "https://test-indego.herokuapp.com/api/v1",
             "description": "Heroku"
         }
     ],

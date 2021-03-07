@@ -6,8 +6,8 @@ export const swaggerDocument = {
      description: 'API documentation for indego-backend',
      termsOfService: '',
      contact: {
-         name: 'Hassaan Tariq',
-         email: 'hassaan@eforte.net',
+         name: 'Owais Tariq',
+         email: 'owais@eforte.net',
          url: '#'
      },
      license: {
