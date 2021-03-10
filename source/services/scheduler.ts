@@ -8,7 +8,9 @@ import Station from '../models/station';
 
 //Hit every 1 hour
 const scheduler = async () => {
-    let task = schedule.scheduleJob('0 0 */1 * * *', function () {
+    const rule = new schedule.RecurrenceRule();
+    rule.minute = 1;
+    schedule.scheduleJob(rule, function () {
         fetch('https://www.rideindego.com/stations/json/')
             .then((res) => res.json())
             .catch(function (error) {
